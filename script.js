@@ -6,13 +6,13 @@ var w = 40;
 for (var y = 0; y < h; y++) {
     matrix[y] = [];
     for (var x = 0; x < w; x++) {
-        if( x== 20 || x== 21 || y== 19 || y== 20 ){
+        if (x == 20 || x == 21 || y == 19 || y == 20) {
             matrix[y][x] = 4;
         }
-        else{
+        else {
             matrix[y][x] = Math.round(Math.random() * 3);
         }
-        
+
     }
 }
 /*var matrix = [[0, 0, 1, 0, 0],
@@ -64,22 +64,16 @@ function setup() {
 function draw() {
 
     for (var i in grassArr) {
-        var obj = grassArr[i];
-        obj.mul();
+        grassArr[i].mul();
     }
     for (var i in grassEaterArr) {
-        var obj = grassEaterArr[i];
-        obj.eat();
+        grassEaterArr[i].eat();
     }
     for (var i in gelArr) {
-        var obj = gelArr[i];
-        //obj.move();
-        obj.eat();    
+        gelArr[i].eat();
     }
     for (var i in patArr) {
-        var obj = patArr[i];
-        console.log(obj);
-        obj.xotavelacnel();    
+        patArr[i].xotavelacnel();
     }
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
